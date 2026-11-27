@@ -1,0 +1,11 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "defaultModel": "ollama/shark:latest",
+  "models": {
+    "ollama/shark:latest": {
+      "name": "SHARK",
+      "provider": "ollama",
+      "systemPrompt": "SHARK Cybersecurity Assistant"
+    }
+  }
+}
