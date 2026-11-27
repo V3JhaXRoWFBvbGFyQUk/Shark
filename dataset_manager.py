@@ -727,7 +727,7 @@ class DatasetManager:
         
         # Score each category
         scores = {}
-        for cat, keywords in category_kwargs.items():
+        for cat, keywords in category_keywords.items():
             score = sum(1 for kw in keywords if kw in content_lower)
             if score > 0:
                 scores[cat] = score

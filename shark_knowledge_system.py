@@ -257,6 +257,12 @@ class SHARKKnowledgeSystem:
         rag_context = self.retrieve_knowledge(query, k=k, knowledge_base=knowledge_base)
         
         # Format the complete prompt
+        # Build citation references: [1], [2], [3] etc.
+        citation_refs = []
+        for i in range(1, len(rag_context['citations']) + 1):
+            citation_refs.append(f"[{i}]")
+        citation_refs_str = " ".join(citation_refs)
+        
         formatted_prompt = f"""<|system|>
 {system_prompt}</|system|>
 
@@ -270,8 +276,7 @@ User question: {query}
 Instructions:
 - Provide a comprehensive, accurate answer based on the context above
 - If the context doesn't contain sufficient information, say so clearly
-- Cite your sources using the citation format: [{i}] where i corresponds to 
-  the source number (1-indexed from the cited sources)
+- Cite your sources using the citation format: {citation_refs_str}
 - Only share information that is clearly present in the cited sources
 - If multiple sources provide information, synthesize them cohesively
 - Maintain SHARK's cybersecurity expertise while being grounded in the provided context
