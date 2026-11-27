@@ -1,4 +1,4 @@
-FROM shark-base
+FROM qwen2.5-coder:7b
 
 PARAMETER temperature 0.2
 PARAMETER top_p 0.9
