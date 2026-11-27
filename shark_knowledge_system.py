@@ -384,12 +384,14 @@ Instructions:
             name in self.dataset_approvals
         )
         
+        vector_db_path = rag_info.get("vector_db_path", "chroma_db")
+        
         return {
             "model_name": self.model_name,
             "initialized": self.initialized,
             "active_adapter": self.active_adapter,
-            "embedding_model": rag_info.get("embedding_model", "unknown"),
-            "vector_db": rag_info.get("vector_db_path", "unknown"),
+            "embedding_model": rag_info.get("embedding_model", "all-MiniLM-L6-v2"),
+            "vector_db_path": vector_db_path,
             "knowledge_bases": {
                 k: {"description": v["description"], "source_type": v["source_type"]}
                 for k, v in self.rag_system.knowledge_bases.items()
