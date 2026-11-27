@@ -13,13 +13,136 @@ exploit research in isolated labs, reverse engineering, CTFs, and defensive secu
 - Default model configuration: SHARK
 - Custom system prompt: SHARK Cybersecurity Assistant
 
-## Usage (Ollama)
+## Quick Start
+
+### Using Ollama
 
 ```bash
 ollama create shark -f model/Modelfile
 ollama run shark
 ```
 
-## OpenCode
+### Using OpenCode (Recommended)
 
-Configure `opencode/opencode.json` with the default model `ollama/shark:latest`.
+SHARK now supports OpenCode, allowing you to launch a fully-featured AI assistant
+without needing `ollama launch`.
+
+```bash
+.\scripts\launch_shark.bat
+```
+
+or
+
+```bash
+python scripts\shark_launch.py
+```
+
+## Features
+
+- **Extremely Smart**: Upgraded to Qwen2.5 7B parameter model for enhanced reasoning
+- **Web Crawling**: Built-in web crawler for security research and threat intelligence
+- **OpenCode Support**: Native OpenCode integration with custom launch command
+- **Security Focused**: Specialized in cybersecurity tasks including:
+  - Vulnerability assessment and exploit analysis
+  - Threat intelligence and attack vectors
+  - Reverse engineering and malware analysis
+  - Cryptography and encoding schemes
+  - Network security and protocol analysis
+  - CTF challenges and capture techniques
+  - Penetration testing methodologies
+  - Defensive security and incident response
+
+## Installation
+
+### Using Ollama
+
+```bash
+# Create the SHARK model
+ollama create shark -f model/Modelfile
+
+# Run SHARK
+ollama run shark
+```
+
+### Using OpenCode
+
+```bash
+# Install dependencies
+pip install opencode
+
+# Launch SHARK with OpenCode
+.\scripts\launch_shark.bat
+```
+
+## Scripts
+
+| Script | Description |
+|--------|-------------|
+| `scripts/webcrawler.py` | Web crawler for security research |
+| `scripts/shark_launch.py` | OpenCode launch configuration |
+| `scripts\launch_shark.bat` | Windows batch launcher for OpenCode |
+
+## Model Configuration
+
+The Modelfile (`model/Modelfile`) has been upgraded from `qwen2.5:1.5b` to `qwen2.5:7b`
+with optimized parameters for cybersecurity tasks:
+
+```dockerfile
+FROM qwen2.5:7b
+
+PARAMETER temperature 0.1
+PARAMETER top_p 0.9
+PARAMETER num_ctx 32768
+PARAMETER num_predict 4096
+PARAMETER num_thread 16
+
+SYSTEM """You are SHARK, the SHARK Cybersecurity Assistant...
+(Full system prompt omitted for brevity)"""
+```
+
+## Training
+
+SHARK includes training scripts for further customization:
+
+```bash
+# Train SHARK on custom data
+python training\train.py
+
+# Prepare dataset
+python training\prepare_dataset.py
+
+# Evaluate model performance
+python training\evaluate.py
+```
+
+## Web Crawling
+
+SHARK includes a web crawler utility for security research:
+
+```bash
+# Basic crawl
+python scripts\webcrawler.py https://example.com
+
+# Crawl with security extraction
+python scripts\webcrawler.py https://example.com --extract
+
+# Output to file
+python scripts\webcrawler.py https://example.com -o results.json
+```
+
+## GitHub Preparation
+
+This project is ready for GitHub with:
+
+- Clean `.gitignore` configuration
+- Comprehensive `README.md` with installation instructions
+- Organized `scripts/` directory
+- Proper `model/` structure
+- Training and evaluation pipeline
+- Ethical security research boundaries clearly stated
+
+## Ethical Use
+
+SHARK is designed for authorized security research, penetration testing,
+and defensive security only. Always operate within legal and ethical boundaries.
+Never use SHARK for unauthorized access or malicious activities.

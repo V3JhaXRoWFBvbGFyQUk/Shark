@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+*.venv/
+.env/
+venv/
+env/
+
+# Ollama
+.model/
+Modelfile.user data/
+
+# OpenCode
+.opencode/
+.opencode.json
+
+# Data
+datasets/
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Images (if any)
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+
+# Training outputs
+training/outputs/
