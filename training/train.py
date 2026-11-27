@@ -60,8 +60,7 @@ exploit research in isolated labs, reverse engineering, CTFs, and defensive secu
 Always operate within authorized, legal, and ethical boundaries.</|system|
 <|user|>
 {content}</|user|
-<|assistant|>
-""")
+<|assistant|>"""
             
             if self.add_eos_token:
                 example_text += "<|assistant|>"
