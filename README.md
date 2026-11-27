@@ -107,6 +107,25 @@ python internaltools/tools/validate_internaltools.py
 
 See `internaltools/README.md` and the `internal-tool-authoring` skill for details.
 
+## Manual Knowledge (portable memory)
+
+`manualknowledge/` stores durable, hand-maintained facts about you and your work. SHARK
+loads `manualknowledge/AGENTS.md` at the start of every OpenCode session and uses the
+`manual-knowledge` skill to save anything you ask it to remember.
+
+```
+manualknowledge/
+├── AGENTS.md        # Rules loaded into SHARK's context
+├── README.md        # Usage and sync instructions
+├── profile.md       # Facts about you
+├── preferences.md   # How you want SHARK to work
+├── environment.md   # Machines, tools, paths (no credentials)
+└── projects.md      # Project context and decisions
+```
+
+The folder is deliberately tracked by git so it can be pulled on another computer;
+commit/push after changes (or let `sync-tide.sh` do it). Never store secrets there.
+
 ## Model Configuration
 
 The Modelfile (`model/Modelfile`) has been upgraded from `qwen2.5:1.5b` to `qwen2.5:7b`

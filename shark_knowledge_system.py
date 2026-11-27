@@ -117,10 +117,11 @@ class SHARKKnowledgeSystem:
             
             # Report status
             info = self.get_system_info()
+            rag_info = self.rag_system.get_system_info()
             print(f"System initialized. Ready with {len(info['knowledge_bases'])} knowledge bases.")
             print(f"  Embedding: {info['embedding_model']}")
             print(f"  Vector DB: {info['vector_db_path']}.chroma")
-            print(f"  Reranker: {info['reranker']}")
+            print(f"  Reranker: {rag_info.get('reranker', 'none')}")
             
             return True
             

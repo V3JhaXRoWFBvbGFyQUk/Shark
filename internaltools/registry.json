@@ -7,6 +7,12 @@
       "path": "skills/internal-tool-authoring/SKILL.md",
       "purpose": "Workflow for creating, registering, validating, and reloading SHARK skills and tools.",
       "created": "2026-11-27"
+    },
+    {
+      "id": "manual-knowledge",
+      "path": "skills/manual-knowledge/SKILL.md",
+      "purpose": "Save and recall durable user facts in manualknowledge/ across sessions and computers.",
+      "created": "2026-11-27"
     }
   ],
   "tools": [
