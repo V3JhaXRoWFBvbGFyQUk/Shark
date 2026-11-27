@@ -7,7 +7,8 @@ echo     SHARK AI - OpenCode Launcher
 echo ==========================================
 
 set "SCRIPT_DIR=%~dp0"
-cd "%SCRIPT_DIR%"
+:: Run from the project root so config paths (internaltools/, opencode/) resolve.
+cd /d "%SCRIPT_DIR%.."
 
 :: Check if Python and required packages are available
 python --version >nul 2>&1

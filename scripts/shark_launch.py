@@ -117,7 +117,10 @@ def main():
                         help="System prompt for SHARK")
     
     args = parser.parse_args()
-    
+
+    # Keep config paths stable regardless of where the launcher was invoked from.
+    os.chdir(Path(__file__).resolve().parents[1])
+
     # Update config with custom system prompt if provided
     config_path = args.config or os.path.join(os.getcwd(), "opencode", "opencode.json")
     

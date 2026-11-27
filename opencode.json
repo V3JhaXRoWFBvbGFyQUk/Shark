@@ -1,0 +1,6 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "ollama/shark:latest",
+  "skills": ["./internaltools/skills"],
+  "instructions": ["internaltools/AGENTS.md"]
+}

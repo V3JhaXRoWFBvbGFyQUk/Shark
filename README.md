@@ -82,6 +82,31 @@ pip install opencode
 | `scripts/shark_launch.py` | OpenCode launch configuration |
 | `scripts\launch_shark.bat` | Windows batch launcher for OpenCode |
 
+## Internal Tools (SHARK's self-extension workspace)
+
+SHARK can author its own reusable skills and tools in `internaltools/`. The folder is
+registered in the root `opencode.json` as an instruction file and a skills source, so
+OpenCode advertises the skills to SHARK automatically.
+
+```
+internaltools/
+├── AGENTS.md           # Convention loaded into SHARK's context
+├── registry.json       # Catalog of authored skills and tools
+├── skills/             # SHARK-authored skills (SKILL.md files)
+├── tools/              # SHARK-authored executable tools
+└── templates/          # Starting points for new skills and tools
+```
+
+When SHARK needs a repeatable capability, it checks the registry, adds a skill or tool
+under `internaltools/`, registers it, runs the validator, and reloads OpenCode. Validate
+the workspace with:
+
+```bash
+python internaltools/tools/validate_internaltools.py
+```
+
+See `internaltools/README.md` and the `internal-tool-authoring` skill for details.
+
 ## Model Configuration
 
 The Modelfile (`model/Modelfile`) has been upgraded from `qwen2.5:1.5b` to `qwen2.5:7b`
