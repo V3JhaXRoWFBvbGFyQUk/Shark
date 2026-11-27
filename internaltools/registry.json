@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "description": "Catalog of skills and tools SHARK has authored for its own use.",
+  "skills": [
+    {
+      "id": "internal-tool-authoring",
+      "path": "skills/internal-tool-authoring/SKILL.md",
+      "purpose": "Workflow for creating, registering, validating, and reloading SHARK skills and tools.",
+      "created": "2026-11-27"
+    }
+  ],
+  "tools": [
+    {
+      "name": "validate_internaltools",
+      "path": "tools/validate_internaltools.py",
+      "command": "python internaltools/tools/validate_internaltools.py",
+      "purpose": "Validate internaltools structure, skill frontmatter, and registry consistency.",
+      "created": "2026-11-27"
+    }
+  ]
+}
